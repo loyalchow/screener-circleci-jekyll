@@ -9,7 +9,7 @@ dependencies:
     # Setup sample Jekyll site with sitemap
     - bundle install
     - jekyll new site
-    - printf "gems:\n  - jekyll-sitemap" >> ./site/_config.yml
+    - printf "gems:\n  - jekyll-sitemap\nurl: \"http://ci.server:4000\"" >> ./site/_config.yml
     # Install Screener CI Script
     - wget https://s3-us-west-2.amazonaws.com/screener-files/ci/v2/screener-ci.zip
     - unzip screener-ci.zip
