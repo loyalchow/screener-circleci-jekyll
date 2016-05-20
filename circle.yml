@@ -1,4 +1,6 @@
 machine:
+  ruby:
+    version: 2.0.0
   hosts:
     ci.server: 127.0.0.1
 
