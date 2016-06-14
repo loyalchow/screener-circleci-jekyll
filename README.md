@@ -6,10 +6,11 @@ This repo includes a CircleCI configuration that:
 
 - Sets up a sample Jekyll website.
 - Installs the jekyll-sitemap plugin to auto-generate sitemap.xml.
-- Sets hostname on CI Server to "ci.server".
 - Runs Jekyll server on default port 4000.
+- Use [xip.io](xip.io) dynamic DNS service to create hostname that includes Git Branch name.
 - Starts a Screener Tunnel that exposes CI server to Screener Cloud browsers.
 - Runs a Screener test that crawls the Jekyll site's sitemap.xml file, automatically capturing a snapshot of each url in the sitemap.
+- Separate snapshots by Git Branch in order to differentiate regressions found in multiple feature branches / PRs.
 
 ## How To Run
 
@@ -27,7 +28,7 @@ In Screener Dashboard:
 
 3. **Add path to Sitemap:**
     - Click `Pages` to open the Pages Dialog.
-    - Add the path `/sitemap.xml` to pages. (Screener will automatically prefix this path with the Base Url added above)
+    - Add the path `/sitemap.xml` to pages. (Screener will automatically prefix this path with the Base Url)
     - Then click "Save".
 
 <img src="https://s3-us-west-2.amazonaws.com/screener.io/github/screener-circleci-jekyll/add-sitemap-pages.png" width="500">
@@ -48,6 +49,8 @@ Both these values can be copied from your Screener Dashboard.
 ### Push Code
 
 Push code to Github to run tests in CircleCI.
+
+When pushing to a specific Git Branch, snapshots for that branch will be labelled in the Dashboard with the branch name.
 
 When tests are complete, you can view the results in Screener (see screenshots below). If regressions are found, Screener will notify you (via email and/or [Slack](https://screener.io/docs/notifications)).
 
