@@ -8,7 +8,7 @@ dependencies:
     - bundle install
     - jekyll new site
     - |
-      printf 'gems:\n  - jekyll-sitemap\nurl: "http://$CIRCLE_BRANCH.127.0.0.1.xip.io:4000"' >> ./site/_config.yml
+      printf 'gems:\n  - jekyll-sitemap\nurl: "http://%s.127.0.0.1.xip.io:4000"' $CIRCLE_BRANCH >> ./site/_config.yml
     # Install Screener CI Script
     - wget https://s3-us-west-2.amazonaws.com/screener-files/ci/v2/screener-ci.zip
     - unzip screener-ci.zip
