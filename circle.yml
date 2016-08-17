@@ -10,7 +10,7 @@ dependencies:
     - |
       printf 'gems:\n  - jekyll-sitemap\nurl: "http://%s.127.0.0.1.xip.io:4000"' $CIRCLE_BRANCH >> ./site/_config.yml
     # Install Screener CI Script
-    - wget https://s3-us-west-2.amazonaws.com/screener-files/ci/v2/screener-ci.zip
+    - wget https://s3-us-west-2.amazonaws.com/screener-files/ci/v2.1/screener-ci.zip
     - unzip screener-ci.zip
     # Install Screener Tunnel Client
     - wget https://s3-us-west-2.amazonaws.com/screener-files/screener-tunnel/screener-tunnel-client-linux-amd64.zip
